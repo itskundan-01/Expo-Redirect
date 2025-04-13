@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MahaLaxya - AI-Powered Personal Finance Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MahaLaxya</h1>
+            <h2 class="subtitle">The Gateway to your Financial Goals</h2>
+        </header>
+
+        <section class="options">
+            <div class="option-card ai-advisor" onclick="redirectTo('ai-advisor')">
+                <div class="card-header">
+                    <div class="icon">
+                        <img src="assets/gemini_icon.png" alt="Gemini AI" class="logo-icon">
+                    </div>
+                    <h3>AI Finance Advisor</h3>
+                </div>
+                <p>Get personalized financial advice, investment recommendations, and portfolio analysis powered by our advanced AI model.</p>
+                <div class="features">
+                    <span><i class="fas fa-check-circle"></i> Smart risk assessment</span>
+                    <span><i class="fas fa-check-circle"></i> Personalized investment plans</span>
+                    <span><i class="fas fa-check-circle"></i> Financial goal tracking</span>
+                </div>
+                <button class="try-button">Try It Now</button>
+            </div>
+
+            <div class="option-card trading-platform" onclick="redirectTo('trading-platform')">
+                <div class="card-header">
+                    <div class="icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Virtual Trading Platform</h3>
+                </div>
+                <p>Learn and practice investment strategies with our risk-free simulator using real market data and educational resources.</p>
+                <div class="features">
+                    <span><i class="fas fa-check-circle"></i> Paper trading with real-time data</span>
+                    <span><i class="fas fa-check-circle"></i> Educational content library</span>
+                    <span><i class="fas fa-check-circle"></i> Performance analytics</span>
+                </div>
+                <button class="try-button">Try It Now</button>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 MahaLaxya. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

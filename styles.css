@@ -1,0 +1,326 @@
+:root {
+    --primary-color: #3b82f6; /* Blue */
+    --secondary-color: #10b981; /* Green */
+    --dark-blue: #1e40af;
+    --light-blue: #dbeafe;
+    --dark-green: #065f46;
+    --light-green: #d1fae5;
+    --background: #f8fafc;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --white: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--background) 0%, #f0f7ff 100%);
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Section - Simplified */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+}
+
+/* Options Section - Made More Prominent */
+.options {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    flex: 1;
+}
+
+.option-card {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 2.5rem;
+    flex: 1;
+    min-width: 300px;
+    max-width: 550px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.option-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.option-card.ai-advisor {
+    border-top: 5px solid var(--primary-color);
+}
+
+.option-card.trading-platform {
+    border-top: 5px solid var(--secondary-color);
+}
+
+/* New card header with icon and heading side by side */
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.option-card .icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 1.5rem;
+}
+
+.ai-advisor .icon {
+    background-color: var(--light-blue);
+    color: var(--primary-color);
+}
+
+.trading-platform .icon {
+    background-color: var(--light-green);
+    color: var(--secondary-color);
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.option-card h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.ai-advisor h3 {
+    color: var(--dark-blue);
+}
+
+.trading-platform h3 {
+    color: var(--dark-green);
+}
+
+.option-card p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* Feature bullets styling */
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.features span {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.ai-advisor .features i {
+    color: var(--primary-color);
+}
+
+.trading-platform .features i {
+    color: var(--secondary-color);
+}
+
+.try-button {
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-blue));
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: auto;
+}
+
+.trading-platform .try-button {
+    background: linear-gradient(135deg, var(--secondary-color), var(--dark-green));
+}
+
+.try-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    padding: 1rem 0;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+.loading {
+    position: relative;
+}
+
+.loading:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: middle;
+    animation: rotate 1s linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .options {
+        flex-direction: column;
+    }
+    
+    .option-card {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+        padding: 2rem;
+    }
+    
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.4rem;
+    }
+}
+
+/* Additional responsive styling for small screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    header {
+        margin-bottom: 2rem;
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .option-card {
+        padding: 1.5rem;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .option-card .icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .option-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .option-card p {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .features span {
+        font-size: 0.9rem;
+    }
+    
+    .try-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
