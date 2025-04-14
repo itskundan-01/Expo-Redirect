@@ -5,8 +5,8 @@
 
 // URLs for the services - replace these with actual URLs once deployed
 const serviceUrls = {
-    'ai-advisor': 'https://ai-finance-advisor.example.com',  // Replace with actual URL when deployed
-    'trading-platform': 'https://trading-platform.example.com'  // Replace with actual URL when deployed
+    'ai-advisor': 'https://mahalakshya-ai.kundanprojects.space',  // Replace with actual URL when deployed
+    'trading-platform': 'https://mahalakshya.kundanprojects.space'  // Replace with actual URL when deployed
 };
 
 // Default URLs for local development/testing
