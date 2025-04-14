@@ -23,6 +23,13 @@ function redirectTo(service) {
     // Log the selection for analytics purposes
     console.log(`User selected: ${service}`);
     
+    // Special handling for trading platform
+    if (service === 'trading-platform') {
+        // Show modal or alert for trading platform
+        showUnavailableMessage();
+        return;
+    }
+    
     // Get the appropriate URL
     const url = serviceUrls[service] || defaultUrls[service];
     
@@ -50,6 +57,55 @@ function showLoading(service) {
     
     // Add a subtle pulse effect to the entire card
     card.classList.add('pulse');
+}
+
+/**
+ * Shows a message that the trading platform is only available on localhost
+ */
+function showUnavailableMessage() {
+    // Create modal element
+    const modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+    modal.style.display = 'flex';
+    modal.style.justifyContent = 'center';
+    modal.style.alignItems = 'center';
+    modal.style.zIndex = '1000';
+    
+    // Create message box
+    const messageBox = document.createElement('div');
+    messageBox.style.backgroundColor = 'white';
+    messageBox.style.padding = '2rem';
+    messageBox.style.borderRadius = '12px';
+    messageBox.style.maxWidth = '90%';
+    messageBox.style.width = '500px';
+    messageBox.style.textAlign = 'center';
+    messageBox.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
+    
+    // Message content
+    messageBox.innerHTML = `
+        <h3 style="color: var(--dark-blue); margin-bottom: 1rem;">Trading Platform Not Available</h3>
+        <p style="margin-bottom: 1.5rem;">The trading platform is currently only available on localhost. 
+        Please access it directly from your laptop or local development environment.</p>
+        <p style="margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--text-light);">
+            Local URL: ${defaultUrls['trading-platform']}
+        </p>
+        <button id="close-modal" style="background: linear-gradient(135deg, var(--primary-color), var(--dark-blue)); 
+        color: white; border: none; border-radius: 50px; padding: 0.8rem 2rem; 
+        font-size: 1.1rem; cursor: pointer;">Close</button>
+    `;
+    
+    modal.appendChild(messageBox);
+    document.body.appendChild(modal);
+    
+    // Add event listener to close button
+    document.getElementById('close-modal').addEventListener('click', () => {
+        document.body.removeChild(modal);
+    });
 }
 
 /**
