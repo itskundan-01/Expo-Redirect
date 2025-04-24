@@ -12,7 +12,7 @@ const serviceUrls = {
 // Default URLs for local development/testing
 const defaultUrls = {
     'ai-advisor': 'http://localhost:5000',
-    'trading-platform': 'http://localhost:3000'
+    'trading-platform': 'http://localhost:5000'
 };
 
 /**
